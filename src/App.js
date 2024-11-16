@@ -60,7 +60,7 @@ function App() {
         <h1 className="text-3xl m-4 hover:bg-sky-700 rounded-md p-2"><a href="#head">Hello</a></h1>
         <h1 className="text-3xl m-4 hover:bg-sky-700 rounded-md p-2"><a href="#items">Items</a></h1>
       </header>
-      <main className='justify-center flex'>
+      <main className='justify-center grid'>
         <h1 className='text-3xl'>Liked Items</h1>
         <LikedItems likedItems={itemsList.filter(item => likedItemIds.includes(item.id))} unlikeItem={handleUnLikeItem}/>
         <Items itemsList={itemsList} setItemList={setItemList} likeItem={handleLikeAddItem}/>
