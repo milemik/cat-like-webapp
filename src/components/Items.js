@@ -32,26 +32,28 @@ export default function Items({itemsList, setItemList, likeItem}) {
 
     return (
         <>
-            <div>
-                <h2 className="text-2xl">Items</h2>
-            </div>
-            <ol className="m-4 p-4 md:flex md:flex-wrap grid justify-items-stretch">
-                {itemsList.map((e) => (
-                    <Item itemName={e.itemName} id={e.id} imageUrl={e.imageUrl} imageDescription={e.imageDescription} addItemLiked={likeItem}/>
+            <section id="items" className="justify-center grid">
+                <div>
+                    <h2 className="text-2xl text-center">Items</h2>
+                </div>
+                <ol className="m-4 p-4 md:flex md:flex-wrap grid justify-center">
+                    {itemsList.map((e) => (
+                        <Item itemName={e.itemName} id={e.id} imageUrl={e.imageUrl} imageDescription={e.imageDescription} addItemLiked={likeItem}/>
+                            )
                         )
-                    )
-                }
-            </ol>
-            <div>
+                    }
+                </ol>
+            </section>
+            <section id="addItem" className="justify-center grid gap-4">
                 <h2 className="text-3xl">Add item</h2>
-                <form className="grid" onSubmit={handleSubmit}>
-                    <input type="text" placeholder="Add item name" name="itemName" value={addItemFormData.itemName} onChange={handleChage}/>
-                    <input type="text" placeholder="ITEM ID" name="id" value={addItemFormData.id} onChange={handleChage}/>
-                    <input type="text" placeholder="ITEM URL" name="imageUrl" value={addItemFormData.imageUrl} onChange={handleChage}/>
-                    <input type="text" placeholder="ITEMM DESCRIPTION" name="imageDescription" value={addItemFormData.imageDescription} onChange={handleChage}/>
-                    <input className="hover:cursor-pointer" type="submit" value="ADD ITEM"/>
+                <form className="grid gap-4" onSubmit={handleSubmit}>
+                    <input className="border-solid border-indigo-600 rounded drop-shadow-xl p-6" type="text" placeholder="Add item name" name="itemName" value={addItemFormData.itemName} onChange={handleChage}/>
+                    <input className="border-solid border-indigo-600 rounded drop-shadow-xl p-6" type="text" placeholder="ITEM ID" name="id" value={addItemFormData.id} onChange={handleChage}/>
+                    <input className="border-solid border-indigo-600 rounded drop-shadow-xl p-6" type="text" placeholder="ITEM URL" name="imageUrl" value={addItemFormData.imageUrl} onChange={handleChage}/>
+                    <input className="border-solid border-indigo-600 rounded drop-shadow-xl p-6" type="text" placeholder="ITEM DESCRIPTION" name="imageDescription" value={addItemFormData.imageDescription} onChange={handleChage}/>
+                    <input className="hover:cursor-pointer bg-cyan-500 rounded text-2xl" type="submit" value="ADD ITEM"/>
                 </form>
-            </div>
+            </section>
         
         </>
     )

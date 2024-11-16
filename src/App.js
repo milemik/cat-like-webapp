@@ -57,11 +57,12 @@ function App() {
   return (
     <div className="App">
       <header className="flex justify-center bg-gradient-to-r from-cyan-500 to-blue-500">
-        <h1 className="text-3xl m-4 hover:bg-sky-700 rounded-md p-2"><a href="#head">Hello</a></h1>
+        <h1 className="text-3xl m-4 hover:bg-sky-700 rounded-md p-2 font-bold text-lime-400"><a href="#head">CATS</a></h1>
         <h1 className="text-3xl m-4 hover:bg-sky-700 rounded-md p-2"><a href="#items">Items</a></h1>
+        <h1 className="text-3xl m-4 hover:bg-sky-700 rounded-md p-2"><a href="#addItem">Add Item</a></h1>
       </header>
-      <main className='justify-center grid'>
-        <h1 className='text-3xl'>Liked Items</h1>
+      <main className='justify-center grid gap-6 m-10'>
+        <h1 className='text-3xl text-center'>Liked Items</h1>
         <LikedItems likedItems={itemsList.filter(item => likedItemIds.includes(item.id))} unlikeItem={handleUnLikeItem}/>
         <Items itemsList={itemsList} setItemList={setItemList} likeItem={handleLikeAddItem}/>
       </main>
